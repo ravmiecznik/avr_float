@@ -34,7 +34,7 @@ ret_t gcd(in_t a, in_t b) {
 
 /////FloatingNum//////////////////////////////////////////////////////////////////////////////////
 /*
- * Class to providing string representation of Rational object
+ * Class to provide string representation of Rational object
  * Rational(1/3) -> FloatingNum(1, 3, 3).to_str((char*)buff) => 1.333
  */
 template<class t>
