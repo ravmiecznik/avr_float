@@ -1,7 +1,10 @@
-```c++	
+```c++
+    //INIT	
 	char buffer[100];
 	cout << "HELLO" << __FILE__ << endl << endl;
+```
 
+```c++	
 	Rational<uint64_t> R1(3,4);
 	cout << "R1: "<< R1.to_str(buffer) << endl;
 	cout << "R1: "<< R1.to_float(buffer) << endl;
