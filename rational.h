@@ -105,7 +105,6 @@ public:
 
 	template<typename cast_to>
 	operator Rational<cast_to>() {
-		printf("cast %lu %lu\n", nominator, denominator);
 		return Rational<cast_to>(static_cast<cast_to>(nominator),
 				static_cast<cast_to>(denominator));
 	}
@@ -167,10 +166,29 @@ Rational<t>::Rational(t nom, t denom) :
 }
 
 template<>
-char* Rational<uint16_t>::to_str(char *buf);
+char* Rational<int8_t>::to_str(char *buf);
+
+template<>
+char* Rational<uint8_t>::to_str(char *buf);
 
 template<>
 char* Rational<int16_t>::to_str(char *buf);
+
+template<>
+char* Rational<uint16_t>::to_str(char *buf);
+
+template<>
+char* Rational<int32_t>::to_str(char *buf);
+
+template<>
+char* Rational<uint32_t>::to_str(char *buf);
+
+template<>
+char* Rational<int64_t>::to_str(char *buf);
+
+template<>
+char* Rational<uint64_t>::to_str(char *buf);
+
 
 template<typename t>
 Rational<t> operator+(const Rational<t>& a, const Rational<t>& b) {
