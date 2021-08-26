@@ -41,7 +41,7 @@ class FloatingNum {
 public:
 	t integer;
 	t remainder;
-	uint8_t floating_points;  //! max precision is 100 decimal places
+	uint8_t floating_points;  //! max precision is 9 decimal places
 	FloatingNum(t i, t r = 0, uint8_t floating_points = 0) :
 			integer(i), remainder(r), floating_points(floating_points) {
 	}
