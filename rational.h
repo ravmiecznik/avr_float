@@ -99,11 +99,15 @@ FloatingNum<t> to_floating(t nominator, t denominator, uint8_t precision = 1) {
 template<typename t>
 class Rational {
 private:
-	void simplify();
+	;
 public:
+	void simplify();
 	t nominator;
 	t denominator;
 	Rational(t nom, t denom = 1);
+//	Rational(t nom): nominator(nom), denominator(1) {
+//		simplify();
+//	};
 	Rational(const Rational<t>& r) :
 			nominator(r.nominator), denominator(r.denominator) {
 		simplify();
@@ -165,8 +169,8 @@ Rational<t> operator/(const Rational<t>& a, const Rational<t>& b);
 template<typename t>
 void Rational<t>::simplify() {
 	t ratio = 1;
-	if(nominator !=0){
-		t ratio = gcd<t>(nominator, denominator);
+	if(nominator !=0 ){
+		ratio = gcd<t>(nominator, denominator);
 	}
 	nominator /= ratio;
 	denominator /= ratio;
