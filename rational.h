@@ -14,6 +14,16 @@
 
 
 #define MAX_FLOAT_PRECISION 9
+template<typename t>
+/*
+ * Example:
+ * map(Ru32(1,2), Ru32(0,1), Ru32(100,1), Ru32(0,1), Ru32(500,1))
+ * result: 2.5
+ */
+t map(t x, t in_min, t in_max, t out_min, t out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
 
 /*
  * GREATEST COMMON DIVISOR
@@ -154,7 +164,10 @@ Rational<t> operator/(const Rational<t>& a, const Rational<t>& b);
 
 template<typename t>
 void Rational<t>::simplify() {
-	t ratio = gcd<t>(nominator, denominator);
+	t ratio = 1;
+	if(nominator !=0){
+		t ratio = gcd<t>(nominator, denominator);
+	}
 	nominator /= ratio;
 	denominator /= ratio;
 	if (denominator < 0) {
