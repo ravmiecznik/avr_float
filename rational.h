@@ -228,6 +228,17 @@ Rational<t> operator*(const Rational<t>& a, const Rational<t>& b) {
 	return Rational<t>(b.nominator * a.nominator, a.denominator * b.denominator);
 }
 
+
+template<typename t>
+Rational<t> operator*(const Rational<t>& a, uint32_t b) {
+	return Rational<t>(b * a.nominator, a.denominator);
+}
+
+template<typename t>
+Rational<t> operator*(uint32_t b, const Rational<t>& a) {
+	return Rational<t>(b * a.nominator, a.denominator);
+}
+
 template<typename t>
 Rational<t> operator/(const Rational<t>& a, const Rational<t>& b) {
 	return Rational<t>(a.nominator * b.denominator, b.nominator * a.denominator);
